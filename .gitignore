@@ -1,3 +1,4 @@
+#R studio ignore list
 .Rproj.user
 .Rhistory
 .RData
