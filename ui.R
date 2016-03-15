@@ -10,21 +10,28 @@ library(shiny)
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("Shiny RIV point calculator"),
 
-  # Sidebar with a slider input for number of bins
+  # Sidebar with a number of numeric inputs
   sidebarLayout(
     sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
+      numericInput("cat1",
+        "Number of journals in the first category:", 0,
+        min = 1,
+        max = 5000),
+      
+      
+      numericInput("jour1",
+                  "Ranking in the first category:", 0,
                   min = 1,
-                  max = 50,
-                  value = 30)
+                  max = 5000)
+      
+      
     ),
 
-    # Show a plot of the generated distribution
+    # Show a value 
     mainPanel(
-      plotOutput("distPlot")
+      textOutput ("RIV_Points")
     )
   )
 ))

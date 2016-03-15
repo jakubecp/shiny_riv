@@ -9,14 +9,15 @@ library(shiny)
 
 shinyServer(function(input, output) {
 
-  output$distPlot <- renderPlot({
+  output$RIV_Points <- renderPrint({
 
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2]
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
+    # calculate riv points
+    n1 <- (input$jour1-1)/(input$cat1-1)
+    f1 <- (1-n1)/(1+(n1/0.057))
+    r1 <- 10+295*f1
+    print ("Number of RIV points:")
+    print (r1)
 
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
 
   })
 
