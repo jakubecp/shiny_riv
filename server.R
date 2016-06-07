@@ -15,14 +15,11 @@ shinyServer(function(input, output) {
     n1 <- (input$jour1-1)/(input$cat1-1)
     f1 <- (1-n1)/(1+(n1/0.057))
     r1 <- 10+295*f1
+    print (r1)
     
     
-    # if (r1 =! 1:305) {
-    #   print ("Privide meaningful values")
-    # }
-    #   else {
-        print (r1)
-      # }
+
+     
 
 
   })
