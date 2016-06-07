@@ -17,7 +17,12 @@ shinyServer(function(input, output) {
     r1 <- 10+295*f1
     
     
-    print (r1)
+    # if (r1 =! 1:305) {
+    #   print ("Privide meaningful values")
+    # }
+    #   else {
+        print (r1)
+      # }
 
 
   })

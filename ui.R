@@ -4,14 +4,6 @@
 #
 # http://shiny.rstudio.com
 #
-library(shiny)
-library(rsconnect)
-# Authorize Account
-rsconnect::setAccountInfo(name='jakubecp',
-                          token='5FE9CE5E446ED34BED76C8F102ED84DC',
-                          secret='G92rCJTmJtMwjENE89CD6AmzmcZgTD8jaNvqDcPK')
-#deploy the shiny app
-rsconnect::deployApp()
 
 shinyUI(fluidPage(
 
@@ -20,7 +12,7 @@ shinyUI(fluidPage(
 
   # Sidebar with a number of numeric inputs
   sidebarLayout(
-    sidebarPanel(
+    sidebarPanel(tags$h5("Provide values from InCites - Journal Citation Reports(WoS)"), tags$a(href="https://jcr-incites-thomsonreuters-com.infozdroje.czu.cz/JCRJournalHomeAction.action?SID=A1-rqLofhhSS3hxxWoNjiiggonsJcu8g19rr-18x2dZWgQi1ONLdEPrQKQ8eH2vwx3Dx3D5upqzgx2BTI1d7uB0rIqKnGAx3Dx3D-9vvmzcndpRgQCGPd1c2qPQx3Dx3D-wx2BJQh9GKVmtdJw3700KssQx3Dx3D&refineString=null&SrcApp=IC2LS&timeSpan=null&Init=Yes&wsid=Y2jqz6wpKoxOgL7yixj", "link"),
       numericInput("cat1",
         "Number of journals at the first category:", 0,
         min = 1,
@@ -30,7 +22,9 @@ shinyUI(fluidPage(
       numericInput("jour1",
                   "Ranking in the first category:", 0,
                   min = 1,
-                  max = 5000)
+                  max = 5000),
+      
+      tags$h5 ("RIV point calculation for journals in multiple categories will be integrated soon...")
       
       
     ),

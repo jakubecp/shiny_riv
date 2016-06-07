@@ -2,6 +2,8 @@ name: shiny_riv
 account: jakubecp
 server: shinyapps.io
 appId: 107217
-bundleId: 474256
+bundleId: 474281
 url: https://jakubecp.shinyapps.io/shiny_riv/
-when: 1465297056.05123
+when: 1465299432.03624
+asMultiple: FALSE
+asStatic: FALSE
