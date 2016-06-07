@@ -4,8 +4,14 @@
 #
 # http://shiny.rstudio.com
 #
-
 library(shiny)
+library(rsconnect)
+# Authorize Account
+rsconnect::setAccountInfo(name='jakubecp',
+                          token='5FE9CE5E446ED34BED76C8F102ED84DC',
+                          secret='G92rCJTmJtMwjENE89CD6AmzmcZgTD8jaNvqDcPK')
+#deploy the shiny app
+rsconnect::deployApp()
 
 shinyUI(fluidPage(
 
@@ -16,7 +22,7 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
       numericInput("cat1",
-        "Number of journals in the first category:", 0,
+        "Number of journals at the first category:", 0,
         min = 1,
         max = 5000),
       
@@ -30,8 +36,10 @@ shinyUI(fluidPage(
     ),
 
     # Show a value 
+   
     mainPanel(
-      textOutput ("RIV_Points")
+      tags$h3 ("RIV points:",textOutput ("RIV_Points"))
+      
     )
   )
 ))
