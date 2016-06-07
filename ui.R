@@ -31,8 +31,8 @@ shinyUI(fluidPage(
 
     # Show a value 
    
-    mainPanel(
-      tags$h3 ("Your RIV points:",textOutput ("RIV_Points"))
+    mainPanel(width=8,
+      tags$h2 ("Your RIV points:",textOutput ("RIV_Points"))
       
     )
   )
