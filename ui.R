@@ -12,7 +12,7 @@ shinyUI(fluidPage(
 
   # Sidebar with a number of numeric inputs
   sidebarLayout(
-    sidebarPanel(tags$h3("Provide values from InCites - Journal Citation Reports"), tags$a(href="https://jcr-incites-thomsonreuters-com.infozdroje.czu.cz/JCRJournalHomeAction.action?SID=A1-rqLofhhSS3hxxWoNjiiggonsJcu8g19rr-18x2dZWgQi1ONLdEPrQKQ8eH2vwx3Dx3D5upqzgx2BTI1d7uB0rIqKnGAx3Dx3D-9vvmzcndpRgQCGPd1c2qPQx3Dx3D-wx2BJQh9GKVmtdJw3700KssQx3Dx3D&refineString=null&SrcApp=IC2LS&timeSpan=null&Init=Yes&wsid=Y2jqz6wpKoxOgL7yixj", "Web of Science"), tags$br(),tags$br(),
+    sidebarPanel(tags$h4("Provide values from InCites - Journal Citation Reports"), tags$a(href="https://jcr-incites-thomsonreuters-com.infozdroje.czu.cz/JCRJournalHomeAction.action?SID=A1-rqLofhhSS3hxxWoNjiiggonsJcu8g19rr-18x2dZWgQi1ONLdEPrQKQ8eH2vwx3Dx3D5upqzgx2BTI1d7uB0rIqKnGAx3Dx3D-9vvmzcndpRgQCGPd1c2qPQx3Dx3D-wx2BJQh9GKVmtdJw3700KssQx3Dx3D&refineString=null&SrcApp=IC2LS&timeSpan=null&Init=Yes&wsid=Y2jqz6wpKoxOgL7yixj", "Web of Science"), tags$br(),tags$br(),
       numericInput("cat1",
         "Number of journals at the first category:", 0,
         min = 1,
@@ -32,7 +32,7 @@ shinyUI(fluidPage(
     # Show a value 
    
     mainPanel(
-      tags$h3 ("RIV points:",textOutput ("RIV_Points"))
+      tags$h3 ("Your RIV points:",textOutput ("RIV_Points"))
       
     )
   )
