@@ -24,7 +24,43 @@ shinyUI(fluidPage(
                   min = 1,
                   max = 5000),
       
-      tags$h5 ("RIV point calculation for journals in multiple categories will be integrated soon...")
+      tags$h5 ("RIV point calculation for journals in multiple categories will be integrated soon..."),
+      
+      #two categories
+      numericInput("cat2",
+        "Number of journals at the second category:", 1,
+        min = 1,
+        max = 5000),
+      numericInput("jour2",
+        "Ranking in the second category:", 1,
+        min = 1,
+        max = 5000),
+      
+      #three categories
+      numericInput("cat3",
+        "Number of journals at the third category:", 1,
+        min = 1,
+        max = 5000),
+      
+      
+      numericInput("jour3",
+        "Ranking in the third category:", 1,
+        min = 1,
+        max = 5000),
+      
+      #four categories
+      numericInput("cat4",
+        "Number of journals at the fourth category:", 1,
+        min = 1,
+        max = 5000),
+      
+      
+      numericInput("jour4",
+        "Ranking in the fourth category:", 1,
+        min = 1,
+        max = 5000)
+      
+      
       
       
     ),
