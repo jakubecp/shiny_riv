@@ -68,8 +68,8 @@ shinyUI(fluidPage(
 
     # Show a value 
    
-    column(8,
-      tags$h2 ("Your RIV points:",tableOutput ("RIV_Points"))
+    column(5,
+      tags$h2 ("Your RIV points:",verbatimTextOutput ("RIV_Points"))
       
     )
   )

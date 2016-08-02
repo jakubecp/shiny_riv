@@ -9,15 +9,25 @@ library(shiny)
 
 shinyServer(function(input, output) {
 
-  output$RIV_Points <- renderTable({
+  output$RIV_Points <- renderPrint({
 
     # calculate riv points
     n1 <- (input$jour1-1)/(input$cat1-1)
     f1 <- (1-n1)/(1+(n1/0.057))
     r1 <- 10+295*f1
     percent <- input$jour1 / input$cat1 * 100
-    names <- c("riv", "percent")
-    values <- c(r1,percent)
+    if (percent > 100) {quartill <- 0
+    }
+    if (percent <= 100) {quartill <- 4
+    } 
+    if (percent <= 75) {quartill <- 3
+    }
+    if (percent <= 50) {quartill <- 2
+    }
+    if (percent <= 25) {quartill <- 1
+    }
+    names <- c("riv", "percent", "quartill")
+    values <- c(r1,percent, quartill)
     tab <- data.frame(names,values)
     
     val <- is.numeric(r1)
@@ -33,8 +43,7 @@ shinyServer(function(input, output) {
       
     } else if (check1 > 0) {print ("Rank of the journal is bigger then number of journals in its category!")
       
-    } else { 
-      print(tab)
+    } else {print(tab)
       
     }  
     
