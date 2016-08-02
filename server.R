@@ -17,7 +17,7 @@ shinyServer(function(input, output) {
     r1 <- 10+295*f1
     percent <- input$jour1 / input$cat1 * 100
     if (percent > 100) {quartill <- 0
-    }
+    } # I have to figure out how to calculate quartill for categories with less then 4 journals...
     if (percent <= 100) {quartill <- 4
     } 
     if (percent <= 75) {quartill <- 3
